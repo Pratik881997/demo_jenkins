@@ -9,8 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'python -m py_compile demo_1.py'
-
-
+                stash(name: "compiled-results", includes: '*.py*')
             }
         }
     }
